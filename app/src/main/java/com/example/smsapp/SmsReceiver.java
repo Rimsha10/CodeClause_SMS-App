@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,9 +20,7 @@ public class SmsReceiver extends BroadcastReceiver {
             String mobNo=message.getDisplayOriginatingAddress();
             String msg=message.getDisplayMessageBody();
             Log.d("MsgDetails","mobNo"+mobNo+", Msg"+ msg);
-            //Snackbar snackbar = Snackbar
-              //      .make(this., "www.journaldev.com", Snackbar.LENGTH_LONG);
-            //snackbar.show();
+            Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             }
 
     }
